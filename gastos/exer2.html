@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas com Filtro por Data</title>
+    <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Card principal da aplicação (main no lugar de div) -->
+    <main class="card">
+
+        <h1>Controle Diário de Gastos</h1>
+
+        <!-- Linha 1: Descrição + Valor (p com classe, sem div) -->
+        <p class="linha-dupla">
+            <input type="text" id="descricao" placeholder="Descrição">
+            <input type="number" id="valor" step="0.01" placeholder="Valor">
+        </p>
+
+        <!-- Linha 2: Data da despesa -->
+        <input type="date" id="data">
+
+        <!-- Botão principal (verde) -->
+        <button id="btnAdicionar" class="btn btn-verde">Adicionar Despesa</button>
+
+        <!-- Subseção de filtro (fieldset no lugar de div) -->
+        <fieldset class="filtro">
+            <p>Filtrar despesas por data:</p>
+            <p class="linha-dupla">
+                <input type="date" id="filtroData">
+                <button id="btnVerTodas" class="btn btn-cinza">Ver Todas</button>
+            </p>
+        </fieldset>
+
+        <!-- Tabela de despesas -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+                <!-- Linhas geradas dinamicamente via JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Totalização (p com classe, sem div) -->
+        <p class="total" id="total">Total R$ 0.00</p>
+
+        <!-- Botão perigoso (vermelho) -->
+        <button id="btnExcluirTodas" class="btn btn-vermelho">Excluir Todas as Despesas</button>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
